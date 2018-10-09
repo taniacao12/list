@@ -16,40 +16,37 @@ struct node {
 //  return root;
 //}
 
-void print_list (struct node *) {
+void print_list (struct node *pointer) {
   printf("LINKED LIST: \n");
-  struct *current = node;
-  while (current != NULL) {
-    printf("%d --> ", current->i);
-    current = current->next;
+  while (pointer != NULL) {
+    printf("%d --> ", pointer->i);
+    pointer = pointer->next;
   }
 }
 
-struct node * insert_front (struct node *, int) {
+struct node * insert_front (struct node *pointer, int) {
   struct node new;
-  new = (new) malloc(sizeof(struct node));
-  new -> next = *;
-  new -> i = int;
-  return new;
+  new = malloc(sizeof(struct node));
+  new->i = int;
+  new->next = *pointer;
+  *pointer = new;
 }
 
-struct node * free_list(struct node *) {
-
+struct node * free_list(struct node *pointer) {
+  struct node *next = NULL;
+  while (*pointer != NULL) {
+    next = (*pointer)->next;
+    free(*pointer);
+    *pointer = next;
+  }
 }
 
 int main(){
   printf("\n");
 
   struct node list;
-  list = return_example();
-  print_student(rand_student);
-
-  printf("\nPromoting student... \n\n");
-
-  promote(&rand_student);
-
-  print_student(rand_student);
-
+  //list = return_example();
+  //print_student(rand_student);
 
   return 0;
 }
