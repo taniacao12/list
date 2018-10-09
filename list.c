@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+//http://www.learn-c.org/en/Linked_lists
 // declare struct
 struct node {
   int i;
